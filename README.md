@@ -1,9 +1,9 @@
 <h1>Multiple-Screens_libGDX</h1>
 <p>Este repositório contém códigos que demonstram a dinâmica de criação de múltiplas telas de jogo com um método simples e também 
 com a abordagem do framework libGDX, que possui uma estrutura mais complexa, porém também mais organizada e bem definida.</p>
-
+<h2></h2>
 <div>
-  <h4>Códigos presentes nos commits e descrição de suas funções:</h4>
+  <h3>Códigos presentes nos commits e descrição de suas funções:</h3>
   <table align="center">
     <thead><tr>
       <th width="261">Commit</th>
@@ -39,4 +39,24 @@ com a abordagem do framework libGDX, que possui uma estrutura mais complexa, por
       </tr>
     </tbody>
   </table>
+</div>
+<div>
+  <h3>Lógica do projeto</h3>
+  <ul>
+    <li>
+      Jogos com uma estrutura de múltiplas telas, como praticamente todos, necessitam das as classes Game e Screen em libGDX, 
+      que fornecem funções, métodos e objetos para mostrar e alternar entre várias telas conforme a lógica do jogo.<br>
+      Mas antes de mostrar tal estrutura, <b>a seguir</b> é descrita uma forma mais simples de estruturar diversas telas de jogo:
+    </li>
+    <li>
+      Em uma <b>abordagem simples</b>, como a descrita no código da classe <code>Jogo.java</code> do primeiro commit, é utilizado um conjunto de variáveis 
+      que rastreiam qual tela estamos mostrando e, em seguida, verificar essas variáveis nas funções render() e nas funções de evento e para decidir o que 
+      exibir ou qual ação executar. No caso, foi utilizado um <code>enum</code> para determinar e definir o estado atual de jogo conforme os eventos 
+      que ocorrem.<br>
+      O jogo cria uma condição que determina o estado atual e cria, conforme este, uma tela de título, uma tela de jogo principal onde o usuário clica em 
+      um círculo verde saltitante e uma tela de fim de jogo (game over). <br>
+      Esse código pode ser modificado para usar funções ou classes separadas para os níveis, ou pode usar valores <code>boolean</code> ou 
+      <code>String</code> para representar a tela do jogo. Mas isso pode não ser eficiente e pode tornar-se complexo com um jogo de maior extensão.
+    </li>
+  </ul>
 </div>
