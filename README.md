@@ -43,20 +43,24 @@ com a abordagem do framework libGDX, que possui uma estrutura mais complexa, por
 <div>
   <h3>Lógica do projeto</h3>
   <p>
-  Jogos com uma estrutura de múltiplas telas, como praticamente todos, necessitam das as classes Game e Screen em libGDX, 
-  que fornecem funções, métodos e objetos para mostrar e alternar entre várias telas conforme a lógica do jogo.<br>
-  Mas antes de mostrar tal estrutura, a seguir é descrita uma forma mais simples de estruturar diversas telas de jogo:
+    Jogos com uma estrutura de múltiplas telas, como praticamente todos, necessitam das as classes Game e Screen em libGDX, 
+    que fornecem funções, métodos e objetos para mostrar e alternar entre várias telas conforme a lógica do jogo.<br>
+    Mas antes de mostrar tal estrutura, a seguir é descrita uma forma mais simples de estruturar diversas telas de jogo:
   </p>
   <ul>
     <li>
-      <p>Em uma <b>abordagem simples</b>, como a descrita no código da classe <code>Jogo.java</code> do primeiro commit, é utilizado um conjunto de variáveis 
+      Em uma <b>abordagem simples</b>, como a descrita no código da classe <code>Jogo.java</code> do primeiro commit, é utilizado um conjunto de variáveis 
       que rastreiam qual tela estamos mostrando e, em seguida, verificar essas variáveis nas funções render() e nas funções de evento e para decidir o que 
       exibir ou qual ação executar. No caso, foi utilizado um <code>enum</code> para determinar e definir o estado atual de jogo conforme os eventos 
-      que ocorrem.</p>
-      <p>O jogo cria uma condição que determina o estado atual e cria, conforme este, uma tela de título, uma tela de jogo principal onde o usuário clica em 
-      um círculo verde saltitante e uma tela de fim de jogo (game over).</p>
-      <p>Esse código pode ser modificado para usar funções ou classes separadas para os níveis, ou pode usar valores <code>boolean</code> ou 
-      <code>String</code> para representar a tela do jogo. Mas isso pode não ser eficiente e pode tornar-se complexo com um jogo de maior extensão.</p>
+      que ocorrem.
+    </li>
+    <li>
+      O jogo cria uma condição que determina o estado atual e cria, conforme este, uma tela de título, uma tela de jogo principal onde o usuário clica em 
+      um círculo verde saltitante e uma tela de fim de jogo (game over).
+    </li>
+    <li>
+      Esse código pode ser modificado para usar funções ou classes separadas para os níveis, ou pode usar valores <code>boolean</code> ou 
+      <code>String</code> para representar a tela do jogo. Mas isso pode não ser eficiente e pode tornar-se complexo com um jogo de maior extensão.
     </li>
   </ul>
   <p>
@@ -113,6 +117,29 @@ com a abordagem do framework libGDX, que possui uma estrutura mais complexa, por
     Isso remete novemente ao processador de entrada criado na função show(). Esse processador de entrada verifica se o usuário digitou a tecla de espaço 
     e, em caso afirmativo, configura a tela atual para uma instância da classe GameScreen. <br>
     <i>(Esta é a outra razão pela qual é passada a instância <code>Jogo.java</code> para o construtor).</i><br>
-    A estrutura classeJogo oculta automaticamente essa tela (chamando a função <code>hide()</code> no processo) e mostra o arquivo GameScreen.
+    A estrutura classeJogo oculta automaticamente essa tela (chamando a função <code>hide()</code> no processo) e "chama" o arquivo GameScreen, levando a 
+    classe principal (nesse caso, representada na variável <code>classeJogo</code>) como argumento do construtor da nova classe.
+  </p>
+</div>
+<div>
+  <p>
+    A classe 
+    <a href="https://github.com/luc-gh/Multiple-Screens_libGDX/blob/main/core/src/com/libgdx/screen/GameScreen.java"><code>GameScreen.java</code></a>
+    possui toda a lógica de jogo, pois constrói a tela de jogo principal. Nela, a função <code>show()</code> é responsável por interpretar eventos de toque (entrada 
+    de dados), enquanto a função <code>render()</code> fica com a tarefa de desenhar o círculo na tela. 
+  </p>
+  <p>
+    Note que a quando o evento solicitado na função <code>show()</code> ocorrer, 
+    a função render() será interrompida, para que o evento tenha o efeito esperado de acordo com a lógica estabelecida.
+  </p>
+</div>
+<div>
+  <p>
+    Com o evento, a lógica se repete para compartilhar a instância da classe principal como argumento da próxima tela, e esta é a de fim de jogo: 
+    <a href="https://github.com/luc-gh/Multiple-Screens_libGDX/blob/main/core/src/com/libgdx/screen/EndScreen.java"><code>EndScreen.java</code></a>.
+  </p>
+  <p>
+    Essa classe é muito semelhante a classe TitleScreen, pois ela é responsável apenas com a entrada e renderização específica para esta tela, 
+    e chamamos a função setScreen() na instância principal <code>classeJogo</code> para voltar à tela de título quando o usuário pressionar Enter.
   </p>
 </div>
