@@ -13,7 +13,7 @@ com a abordagem do framework libGDX, que possui uma estrutura mais complexa, por
     <tbody align="center">
       <tr>
         <td rowspan="2">Commit 1 - A abordagem simples</td>
-        <td><a href="https://github.com/luc-gh/Multiple-Screens_libGDX/blob/master/desktop/src/com/libgdx/screen/DesktopLauncher.java">DesktopLauncher.java</a></td>
+        <td><a href="https://github.com/luc-gh/Multiple-Screens_libGDX/blob/main/desktop/src/com/libgdx/screen/DesktopLauncher.java">DesktopLauncher.java</a></td>
         <td align="left">Executável da aplicação em desktops</td>
       </tr>
       <tr>
@@ -22,19 +22,19 @@ com a abordagem do framework libGDX, que possui uma estrutura mais complexa, por
       </tr>
       <tr>
         <td rowspan="4">Commit 2 - A abordagem libGDX</td>
-        <td><a href="https://github.com/luc-gh/Multiple-Screens_libGDX/blob/master/core/src/com/libgdx/screen/Jogo.java">Jogo.java</a></td>
+        <td><a href="https://github.com/luc-gh/Multiple-Screens_libGDX/blob/main/core/src/com/libgdx/screen/Jogo.java">Jogo.java</a></td>
         <td align="left">Versão do código principal utilizando as estruturas da classe <code>Game</code> e dos métodos <code>Screen</code>, para criar variáveis de renderização compartilhadas entre classes que representarão as telas de jogo, separadamente</td>
       </tr>
       <tr>
-        <td><a href="https://github.com/luc-gh/Multiple-Screens_libGDX/blob/master/core/src/com/libgdx/screen/TitleScreen.java">TitleScreen.java</a></td>
+        <td><a href="https://github.com/luc-gh/Multiple-Screens_libGDX/blob/main/core/src/com/libgdx/screen/TitleScreen.java">TitleScreen.java</a></td>
         <td align="left">Classe que constrói a tela inicial de jogo</td>
       </tr>
       <tr>
-        <td><a href="https://github.com/luc-gh/Multiple-Screens_libGDX/blob/master/core/src/com/libgdx/screen/GameScreen.java">GameScreen.java</a></td>
+        <td><a href="https://github.com/luc-gh/Multiple-Screens_libGDX/blob/main/core/src/com/libgdx/screen/GameScreen.java">GameScreen.java</a></td>
         <td align="left">Classe que contém a lógica de jogo e é responsável por renderiza-la</td>
       </tr>
       <tr>
-        <td><a href="https://github.com/luc-gh/Multiple-Screens_libGDX/blob/master/core/src/com/libgdx/screen/EndScreen.java">EndScreen.java</a></td>
+        <td><a href="https://github.com/luc-gh/Multiple-Screens_libGDX/blob/main/core/src/com/libgdx/screen/EndScreen.java">EndScreen.java</a></td>
         <td align="left">Classe que contrói a tela de fim de jogo</td>
       </tr>
     </tbody>
@@ -102,7 +102,7 @@ com a abordagem do framework libGDX, que possui uma estrutura mais complexa, por
     <kbd>DesktopLauncher.java</kbd></a> ),
     desde que essa tela seja a tela atual. Nesta função, desenhamos a tela de título. 
     Não há muito o que ver aqui, mas observe
-    que estamos usando o método font criado na classe <code>Jogo.java</code> por meio da instância <code><code>classeJogo</code></code>. Isso permite criar
+    que estamos usando o método font criado na classe <code>Jogo.java</code> por meio da instância <code>classeJogo</code>. Isso permite criar
     objetos apenas uma vez, em vez de recriar várias variáveis iguais em todas as classes de tela. 
     Esta é a razão pela qual passamos a instância de <code>Jogo.java</code> para o construtor.
   </p>
