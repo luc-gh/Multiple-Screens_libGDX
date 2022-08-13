@@ -116,7 +116,7 @@ com a abordagem do framework libGDX, que possui uma estrutura mais complexa, por
     configurado na função <code>show()</code>, para que não sejam recebidos mais eventos depois que essa tela for ocultada.<br>
     Isso remete novemente ao processador de entrada criado na função show(). Esse processador de entrada verifica se o usuário digitou a tecla de espaço 
     e, em caso afirmativo, configura a tela atual para uma instância da classe GameScreen. <br>
-    <i>(Esta é a outra razão pela qual é passada a instância <code>Jogo.java</code> para o construtor).</i><br>
+    <blockquote><i>Esta é a outra razão pela qual é passada a instância <code>Jogo.java</code> para o construtor.</i></blockquote>
     A estrutura classeJogo oculta automaticamente essa tela (chamando a função <code>hide()</code> no processo) e "chama" o arquivo GameScreen, levando a 
     classe principal (nesse caso, representada na variável <code>classeJogo</code>) como argumento do construtor da nova classe.
   </p>
@@ -128,10 +128,10 @@ com a abordagem do framework libGDX, que possui uma estrutura mais complexa, por
     possui toda a lógica de jogo, pois constrói a tela de jogo principal. Nela, a função <code>show()</code> é responsável por interpretar eventos de toque (entrada 
     de dados), enquanto a função <code>render()</code> fica com a tarefa de desenhar o círculo na tela. 
   </p>
-  <p>
+  <blockquote>
     Note que a quando o evento solicitado na função <code>show()</code> ocorrer, 
     a função render() será interrompida, para que o evento tenha o efeito esperado de acordo com a lógica estabelecida.
-  </p>
+  </blockquote>
 </div>
 <div>
   <p>
